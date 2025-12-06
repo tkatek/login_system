@@ -1,0 +1,4 @@
+Register Page → submit → validate → insert in DB → redirect to login // done
+Login Page → submit → validate → check DB → start session → redirect to dashboard
+Dashboard Page → check session → display content
+Logout Page → destroy session → redirect to login
