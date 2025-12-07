@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'db.php';
 if (isset($_POST["login"])) {
 
@@ -10,15 +11,18 @@ $stmt->execute([":email" => $email]);
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if ($user && password_verify($password,$user['password'])){
+    // $_SESSION['user_id'] = $user['id'];
     echo "login successful";
-} else {
-    echo "invalid email or password";
+    header("Location: Dashboard.php");
+    exit;
+
+} 
+
+
+
+
 }
-header("Location: Dashboard.php");
 
-
-
-}
 
 
 
